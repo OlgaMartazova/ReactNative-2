@@ -57,7 +57,6 @@ export class TodoStore {
 
     getCompletedTodos = () => {
         const completedModel = this.todoService.getCompletedTodos(this.todoList)
-        console.log("completed " + completedModel)
         return completedModel
     }
 
@@ -72,6 +71,6 @@ export class TodoStore {
     setTimer = () => setTimeout(
         () => {
             this.setIsLoading(false);
-        }, 1000
+        }, 500
     )
 }
