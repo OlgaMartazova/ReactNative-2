@@ -7,6 +7,9 @@ export default function HomeScreen({ navigation }) {
             <Button
                 onPress={() => navigation.navigate('Todo')}
                 title='Todo list' />
+            <Button
+                onPress={() => navigation.navigate('Fixer')}
+                title='Get data from external storage' />
         </View>
     );
 }

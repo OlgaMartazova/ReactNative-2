@@ -9,7 +9,7 @@ import { observer } from "mobx-react";
 export const TodoListScreen = observer(({ navigation }) => {
 
     const [text, setText] = useState('');
-    const { todoStore } = useRootStore();
+    const { todoStore, _ } = useRootStore();
 
     useEffect(() => {
         todoStore.getTodosFromService()
