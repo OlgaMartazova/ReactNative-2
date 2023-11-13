@@ -7,9 +7,14 @@ export default class FixerService {
         this.fixerRepository = new FixerRepository();
     }
 
-    getAndPrepareDataForStore = async() => {
+    getAndPrepareDataForStore = async () => {
         const data = this.fixerRepository.getDataFromExternalStorage();
         return (await data).fixer
+    }
+
+    getData = async () => {
+        const result = await this.fixerRepository.getItems();
+        return result.data;
     }
 
     getFormattedRates = (rates) => {

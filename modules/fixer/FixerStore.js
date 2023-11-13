@@ -14,6 +14,18 @@ export class FixerStore {
         this.fixerService = new FixerService();
     }
 
+    getData = () => {
+        this.fixerService
+        .getData()
+        .then(result => {
+            this.setFixerData(result)
+        })
+        .catch(error => {
+            console.log(error)
+        })
+        .finally
+    }
+
     getTodosFromService = async () => {
         const model = this.fixerService.getAndPrepareDataForStore();
 

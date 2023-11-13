@@ -7,8 +7,12 @@ export const FixerScreen = observer(({ navigation }) => {
 
     const { _, fixerStore } = useRootStore();
 
+    // useEffect(() => {
+    //     fixerStore.getTodosFromService()
+    // }, [])
+
     useEffect(() => {
-        fixerStore.getTodosFromService()
+        fixerStore.getData()
     }, [])
 
     const keyExtractor = (index) => {
