@@ -1,8 +1,11 @@
 # ReactNative-2
 
-## Работа с сетью используя axios
+## Хранение в AsyncStorage
 
-Данные предоставлены сервисом https://fixer.io/
+Логирование туду листа
 
-https://github.com/OlgaMartazova/ReactNative-2/assets/71041400/e5fed440-157e-49bd-b1a1-6d596ac850c3
+
+https://github.com/OlgaMartazova/ReactNative-2/assets/71041400/20bf2aed-6c9b-4b00-862e-0f1e30269222
+
+
 
