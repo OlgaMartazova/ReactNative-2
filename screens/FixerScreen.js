@@ -5,7 +5,7 @@ import { Button, StyleSheet, Text, View, TouchableOpacity, TextInput, FlatList, 
 
 export const FixerScreen = observer(({ navigation }) => {
 
-    const { _, fixerStore } = useRootStore();
+    const { fixerStore } = useRootStore();
 
     // useEffect(() => {
     //     fixerStore.getTodosFromService()

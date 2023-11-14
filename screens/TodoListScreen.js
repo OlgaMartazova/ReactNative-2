@@ -32,6 +32,7 @@ export const TodoListScreen = observer(({ navigation }) => {
     }
 
     const completeTodo = (index) => {
+        logStore.addLog(`Выполнена задача по индексу: ${index}`)
         todoStore.completeTodo(index)
     }
 

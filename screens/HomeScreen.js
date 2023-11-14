@@ -10,6 +10,9 @@ export default function HomeScreen({ navigation }) {
             <Button
                 onPress={() => navigation.navigate('Fixer')}
                 title='Get data from external storage' />
+            <Button
+                onPress={() => navigation.navigate('Logs')}
+                title='Get logs stored in Async Storage' />
         </View>
     );
 }

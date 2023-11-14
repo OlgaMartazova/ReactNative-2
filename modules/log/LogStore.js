@@ -14,18 +14,10 @@ export class LogStore {
     }
 
     getLogs = () => {
-        this.setIsLoading(true)
-
         this.logService
             .getData()
             .then(result => {
                 this.setLogData(result)
-            })
-            .catch(error => {
-                console.log(error)
-            })
-            .finally(() => {
-                this.setIsLoading(false)
             })
     }
 
@@ -33,20 +25,16 @@ export class LogStore {
         this.setIsLoading(true)
 
         this.logService.setData(this.logData, data)
-        .then(() => {
-            this.setIsLoading(false)
-        })
+            .then(() => {
+                this.setIsLoading(false)
+            })
     }
 
-    removeLogs = () => {
-        this.setIsLoading(true)
+    removeLogs = async () => {
         this.logService.removeAllData()
-        .then(() => {
-            this.setLogData([])
-        })
-        .finally(() => {
-            this.setIsLoading(false)
-        })
+            .then(() => {
+                this.setLogData([])
+            })
     }
 
     setLogData = value => {
