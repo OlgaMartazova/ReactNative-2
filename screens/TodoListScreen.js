@@ -9,7 +9,7 @@ import { observer } from "mobx-react";
 export const TodoListScreen = observer(({ navigation }) => {
 
     const [text, setText] = useState('');
-    const { todoStore, _ } = useRootStore();
+    const { todoStore, _, logStore } = useRootStore();
 
     useEffect(() => {
         todoStore.getTodosFromService()
@@ -17,15 +17,18 @@ export const TodoListScreen = observer(({ navigation }) => {
 
     const addTodo = () => {
         todoStore.addTodo(text)
+        logStore.addLog(`Добавлена задача: ${text}`)
         setText('')
     }
 
     const deleteTodo = index => {
         todoStore.deleteTodo(index)
+        logStore.addLog(`Удалена задача по индексу: ${index}`)
     }
 
     const deleteAllTodos = () => {
         todoStore.deleteAllTodos()
+        logStore.addLog("Удалены все задачи")
     }
 
     const completeTodo = (index) => {
