@@ -6,19 +6,22 @@ import { CompletedListScreen } from "./screens/CompletedListScreen";
 import React, { useEffect, useState } from 'react';
 import { FixerScreen } from "./screens/FixerScreen";
 import { LogScreen } from "./screens/LogScreen";
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name={'Home'} component={HomeScreen} />
-        <Stack.Screen name={'Todo'} component={TodoListScreen} />
-        <Stack.Screen name={'Fixer'} component={FixerScreen} />
-        <Stack.Screen name={'Completed'} component={CompletedListScreen} />
-        <Stack.Screen name={'Logs'} component={LogScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name={'Home'} component={HomeScreen} />
+          <Stack.Screen name={'Todo'} component={TodoListScreen} />
+          <Stack.Screen name={'Fixer'} component={FixerScreen} />
+          <Stack.Screen name={'Completed'} component={CompletedListScreen} />
+          <Stack.Screen name={'Logs'} component={LogScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </GestureHandlerRootView>
   );
 }

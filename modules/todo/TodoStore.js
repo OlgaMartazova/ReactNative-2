@@ -5,6 +5,8 @@ import TodoService from "./TodoService";
 export class TodoStore {
     todoList = null;
 
+    completedList = null;
+
     isLoading = false;
 
     todoService;
@@ -32,7 +34,7 @@ export class TodoStore {
 
         const model = this.todoService.completeTodo(this.todoList, todo)
         this.setTodoList(model)
-
+        this.setCompletedList(this.getCompletedTodos())
         this.setTimer()
     }
 
@@ -55,12 +57,17 @@ export class TodoStore {
     }
 
     getCompletedTodos = () => {
-        const completedModel = this.todoService.getCompletedTodos(this.todoList)
+        
+        const completedModel = this.todoList == null ? [] : this.todoService.getCompletedTodos(this.todoList)
         return completedModel
     }
 
     setTodoList = value => {
         this.todoList = value
+    }
+
+    setCompletedList = value => {
+        this.completedList = value
     }
 
     setIsLoading = value => {
