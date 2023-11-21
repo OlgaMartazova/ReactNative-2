@@ -5,8 +5,7 @@ import { Button, StyleSheet, Text, View, TouchableOpacity, TextInput, FlatList, 
 import { useRootStore } from '../hooks/useRootStore';
 import { observer } from "mobx-react";
 import { Alert } from 'react-native';
-import { Modalize } from 'react-native-modalize';
-import { CompletedListModal } from './CompletedListModal';
+import { CompletedListModal } from '../components/CompletedListModal';
 
 
 export const TodoListScreen = observer(({ navigation }) => {

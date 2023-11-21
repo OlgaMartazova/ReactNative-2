@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button, StyleSheet, Text, View, TouchableOpacity, TextInput, FlatList, SafeAreaView } from 'react-native';
 import { Modalize } from 'react-native-modalize';
-import { CompletedTodoLine } from '../components/CompletedTodoLine';
+import { CompletedTodoLine } from './CompletedTodoLine';
 
 export const CompletedListModal = (props) => {
 
